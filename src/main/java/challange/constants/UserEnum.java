@@ -1,0 +1,23 @@
+package challange.constants;
+
+public enum UserEnum {
+	_ID,
+	ALIAS,
+	ACTIVE,
+	VERIFIED,
+	SHARED,
+	CREATED_AT,
+	LAST_LOGIN_AT,
+	ORGANIZATION_ID,
+	SUSPENDED,
+	ROLE,
+	EMAIL,
+	EXTERNAL_ID,
+	LOCALE,
+	NAME,
+	PHONE,
+	SIGNATURE,
+	TIMEZONE,
+	URL,
+	TAGS
+}
