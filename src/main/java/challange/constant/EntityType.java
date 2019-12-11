@@ -1,4 +1,4 @@
-package challange.constants;
+package challange.constant;
 
 import java.util.HashMap;
 import java.util.Map;

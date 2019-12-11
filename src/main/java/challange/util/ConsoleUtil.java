@@ -1,4 +1,4 @@
-package challange.utils;
+package challange.util;
 
 import java.io.IOException;
 import java.util.List;
@@ -7,20 +7,20 @@ import java.util.Scanner;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
-import challange.constants.EntityType;
-import challange.constants.OrganizationEnum;
-import challange.constants.TicketEnum;
-import challange.constants.UserEnum;
+import challange.constant.EntityType;
+import challange.constant.OrganizationEnum;
+import challange.constant.TicketEnum;
+import challange.constant.UserEnum;
 import challange.domain.Organization;
 import challange.domain.Ticket;
 import challange.domain.User;
 import challange.repository.OrganizationRepository;
 import challange.repository.TicketRepository;
 import challange.repository.UserRepository;
-import challange.services.JsonDataService;
-import challange.services.OrganizationService;
-import challange.services.TicketService;
-import challange.services.UserService;
+import challange.service.JsonDataService;
+import challange.service.OrganizationService;
+import challange.service.TicketService;
+import challange.service.UserService;
 import challange.viewModel.OrganizationModel;
 import challange.viewModel.TicketViewModel;
 import challange.viewModel.UserViewModel;

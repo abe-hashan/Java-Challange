@@ -1,10 +1,10 @@
-package challange.services;
+package challange.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import challange.constants.OrganizationEnum;
-import challange.constants.TicketEnum;
+import challange.constant.OrganizationEnum;
+import challange.constant.TicketEnum;
 import challange.domain.Organization;
 import challange.domain.Ticket;
 import challange.domain.User;

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-import challange.constants.OrganizationEnum;
+import challange.constant.OrganizationEnum;
 import challange.domain.Organization;
 
 public class OrganizationRepository implements IRepository<Organization> {

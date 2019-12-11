@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-import challange.constants.TicketEnum;
+import challange.constant.TicketEnum;
 import challange.domain.Ticket;
 
 public class TicketRepository implements IRepository<Ticket> {

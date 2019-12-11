@@ -1,4 +1,4 @@
-package challange.services;
+package challange.service;
 
 import java.util.List;
 

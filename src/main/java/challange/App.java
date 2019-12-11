@@ -5,7 +5,7 @@ import java.io.IOException;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
-import challange.utils.ConsoleUtil;
+import challange.util.ConsoleUtil;
 
 public class App {
 

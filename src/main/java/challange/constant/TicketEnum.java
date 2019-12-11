@@ -1,4 +1,4 @@
-package challange.constants;
+package challange.constant;
 
 public enum TicketEnum {
 	_ID,

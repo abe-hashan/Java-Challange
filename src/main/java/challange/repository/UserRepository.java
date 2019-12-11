@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
-import challange.constants.UserEnum;
+
+import challange.constant.UserEnum;
 import challange.domain.User;
 
 public class UserRepository implements IRepository<User> {
