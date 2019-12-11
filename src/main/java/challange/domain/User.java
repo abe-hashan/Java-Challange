@@ -1,5 +1,7 @@
 package challange.domain;
 
+import org.apache.commons.lang3.StringUtils;
+
 public class User extends Entity{
 	private String name;
 	private String alias;
@@ -93,11 +95,29 @@ public class User extends Entity{
 	public void setSuspended(boolean suspended) {
 		this.suspended = suspended;
 	}
-	public String isRole() {
+	public String getRole() {
 		return role;
 	}
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+	public String toString() {
+		return	super.toString() + "\n" + 
+				StringUtils.rightPad("name", 40) + name + "\n" +
+				StringUtils.rightPad("alias", 40) + alias + "\n" +
+				StringUtils.rightPad("active", 40) + active + "\n" +
+				StringUtils.rightPad("verified", 40) + verified + "\n" +
+				StringUtils.rightPad("shared", 40) + shared + "\n" +
+				StringUtils.rightPad("locale", 40) + locale + "\n" +
+				StringUtils.rightPad("timezone", 40) + timezone + "\n" +
+				StringUtils.rightPad("last_login_at", 40) + last_login_at + "\n" +
+				StringUtils.rightPad("email", 40) + email + "\n" +
+				StringUtils.rightPad("phone", 40) + phone + "\n" +
+				StringUtils.rightPad("signature", 40) + signature + "\n" +
+				StringUtils.rightPad("organization_id", 40) + organization_id + "\n" +
+				StringUtils.rightPad("suspended", 40) + suspended + "\n" +
+				StringUtils.rightPad("role", 40) + role + "\n" ;
 	}
 	
 	

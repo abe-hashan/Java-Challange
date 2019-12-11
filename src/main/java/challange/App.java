@@ -1,25 +1,27 @@
 package challange;
 
-import java.util.List;
-import challange.domain.User;
-import challange.repository.UserRepository;
-import challange.services.JsonDataService;
+import java.io.IOException;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+
 import challange.utils.ConsoleUtil;
 
 public class App {
 
 	public static void main(String[] args) {
-		ConsoleUtil.intiateConsole();
-//		try {
-//			List<User> users = new JsonDataService<User>().getData("users.json", User.class);
-//			UserRepository userRepo = UserRepository.getRepository(users);
-//			System.out.println(userRepo.search("Francisca Rasmussen","name").get(0).get_id());
-//			
-//		} catch (Exception e) {
-//			System.out.println(e);
-//		}
-		
-		
+		try {
+			ConsoleUtil.intiateConsole();
+		}
+		catch (JsonParseException | JsonMappingException e) {
+			System.out.println("Data source is out of format. Program is exiting...");
+		}
+		catch (IOException e) {
+			System.out.println("Data source read error. . Program is exiting...");
+		}
+		catch (Exception e) {
+			System.out.println("Program is exiting...");
+		}
 	}
 
 }

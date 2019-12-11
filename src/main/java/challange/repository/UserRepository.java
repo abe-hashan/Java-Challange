@@ -2,7 +2,9 @@ package challange.repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
+import challange.constants.UserEnum;
 import challange.domain.User;
 
 public class UserRepository implements IRepository<User> {
@@ -31,32 +33,55 @@ public class UserRepository implements IRepository<User> {
 	}
 
 	private boolean isMatch(String term, String field, User user) {
-		switch (field) {
-		case "_ID":
-			return term.equals(user.get_id());
-		case "EMAIL":
-			return term.equals(user.getEmail());
-		case "CREATED_AT":
-			return term.equals(user.getCreated_at());
-		case "EXTERNAL_ID":
-			return term.equals(user.getExternal_id());
-		case "LOCALE":
-			return term.equals(user.getLocale());
-		case "NAME":
-			return term.equals(user.getName());
-		case "PHONE":
-			return term.equals(user.getPhone());
-		case "SIGNATURE":
-			return term.equals(user.getSignature());
-		case "TIMEZONE":
-			return term.equals(user.getTimezone());
-		case "URL":
-			return term.equals(user.getUrl());
-		case "TAGS":
-			return user.getTags().contains(term);
-		default:
+		try {
+			UserEnum userField = UserEnum.valueOf(field);
+			switch (userField) {
+			case _ID:
+				return Objects.equals(term,user.get_id());
+			case ALIAS:
+				return Objects.equals(term,user.getAlias());
+			case ACTIVE:
+				return Objects.equals(term,Boolean.toString(user.isActive()));
+			case VERIFIED:
+				return Objects.equals(term,Boolean.toString(user.isVerified()));
+			case SHARED:
+				return Objects.equals(term,Boolean.toString(user.isShared()));
+			case SUSPENDED:
+				return Objects.equals(term,Boolean.toString(user.isSuspended()));
+			case LAST_LOGIN_AT:
+				return Objects.equals(term,user.getLast_login_at());
+			case ORGANIZATION_ID:
+				return Objects.equals(term,user.getOrganization_id());
+			case ROLE:
+				return Objects.equals(term,user.getRole());
+			case EMAIL:
+				return Objects.equals(term,user.getEmail());
+			case CREATED_AT:
+				return Objects.equals(term,user.getCreated_at());
+			case EXTERNAL_ID:
+				return Objects.equals(term,user.getExternal_id());
+			case LOCALE:
+				return Objects.equals(term,user.getLocale());
+			case NAME:
+				return Objects.equals(term,user.getName());
+			case PHONE:
+				return Objects.equals(term,user.getPhone());
+			case SIGNATURE:
+				return Objects.equals(term,user.getSignature());
+			case TIMEZONE:
+				return Objects.equals(term,user.getTimezone());
+			case URL:
+				return Objects.equals(term,user.getUrl());
+			case TAGS:
+				return user.getTags().contains(term);
+			default:
+				return false;
+			}
+		} catch (Exception e) {
 			return false;
 		}
+		
+		
 	}
 
 }

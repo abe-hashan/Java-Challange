@@ -1,6 +1,7 @@
 package challange.domain;
 
 import java.util.List;
+import org.apache.commons.lang3.StringUtils;
 
 public abstract class Entity {
 	protected String _id;
@@ -38,6 +39,12 @@ public abstract class Entity {
 	public void setCreated_at(String created_at) {
 		this.created_at = created_at;
 	}
-	
-	
+
+	public String toString() {
+		return 	StringUtils.rightPad("_id", 40)+ _id + "\n" + 
+				StringUtils.rightPad("url", 40)+ url + "\n" + 
+				StringUtils.rightPad("external_id", 40)+ external_id + "\n" + 
+				StringUtils.rightPad("created_at", 40)+ created_at + "\n" + 
+				StringUtils.rightPad("tags", 40)+ tags;
+	}
 }

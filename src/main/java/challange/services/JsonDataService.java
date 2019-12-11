@@ -13,15 +13,17 @@ import challange.domain.User;
 
 public class JsonDataService<T> implements IDataService<T> {
 
-	public List<T> getData(String jsonName, Class<T> clazz) throws JsonParseException, JsonMappingException, IOException {
+	public List<T> getData(Class<T> clazz) throws JsonParseException, JsonMappingException, IOException {
 		ObjectMapper objectMapper = new ObjectMapper();
-		File file = new File(getClass().getClassLoader().getResource(jsonName).getFile());
 		
         if(clazz == Organization.class) {
+        	File file = new File(getClass().getClassLoader().getResource("organizations.json").getFile());
         	return objectMapper.readValue(file, new TypeReference<List<Organization>>() {});
         } else if(clazz == User.class) {
+        	File file = new File(getClass().getClassLoader().getResource("users.json").getFile());
         	return objectMapper.readValue(file, new TypeReference<List<User>>() {});
         } else {
+        	File file = new File(getClass().getClassLoader().getResource("tickets.json").getFile());
         	return objectMapper.readValue(file, new TypeReference<List<Ticket>>() {});
         }
 	}
