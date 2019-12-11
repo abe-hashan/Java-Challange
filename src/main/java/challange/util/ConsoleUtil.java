@@ -7,6 +7,7 @@ import java.util.Scanner;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 
+import challange.config.JsonDataConfig;
 import challange.constant.EntityType;
 import challange.constant.OrganizationEnum;
 import challange.constant.TicketEnum;
@@ -17,7 +18,6 @@ import challange.domain.User;
 import challange.repository.OrganizationRepository;
 import challange.repository.TicketRepository;
 import challange.repository.UserRepository;
-import challange.service.JsonDataService;
 import challange.service.OrganizationService;
 import challange.service.TicketService;
 import challange.service.UserService;
@@ -29,9 +29,9 @@ public class ConsoleUtil {
 	
 	public static void intiateConsole() throws JsonParseException, JsonMappingException, IOException, Exception{
 		
-		OrganizationRepository orgRepo =  OrganizationRepository.getRepository(new JsonDataService<Organization>().getData(Organization.class));
-		TicketRepository ticketRepo =  TicketRepository.getRepository(new JsonDataService<Ticket>().getData(Ticket.class));
-		UserRepository userRepo =  UserRepository.getRepository(new JsonDataService<User>().getData(User.class));
+		OrganizationRepository orgRepo =  OrganizationRepository.getRepository(new JsonDataConfig<Organization>().getData(Organization.class));
+		TicketRepository ticketRepo =  TicketRepository.getRepository(new JsonDataConfig<Ticket>().getData(Ticket.class));
+		UserRepository userRepo =  UserRepository.getRepository(new JsonDataConfig<User>().getData(User.class));
 		
 		OrganizationService orgService = new OrganizationService(orgRepo, ticketRepo, userRepo);
 		TicketService ticketService = new TicketService(orgRepo, ticketRepo, userRepo);

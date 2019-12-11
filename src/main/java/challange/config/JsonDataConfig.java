@@ -1,4 +1,4 @@
-package challange.service;
+package challange.config;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,11 +7,12 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import challange.domain.Organization;
 import challange.domain.Ticket;
 import challange.domain.User;
 
-public class JsonDataService<T> implements IDataService<T> {
+public class JsonDataConfig<T> implements IDataConfigs<T> {
 
 	public List<T> getData(Class<T> clazz) throws JsonParseException, JsonMappingException, IOException {
 		ObjectMapper objectMapper = new ObjectMapper();
