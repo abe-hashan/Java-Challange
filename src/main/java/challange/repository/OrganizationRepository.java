@@ -25,8 +25,7 @@ public class OrganizationRepository implements IRepository<Organization> {
 	}
 
 	public List<Organization> search(String term, String field) {
-		List<Organization> organizations = this.data.stream()
-				.filter(organization -> isMatch(term, field, organization))
+		List<Organization> organizations = this.data.stream().filter(organization -> isMatch(term, field, organization))
 				.collect(Collectors.toList());
 		return organizations;
 	}
@@ -56,7 +55,7 @@ public class OrganizationRepository implements IRepository<Organization> {
 			default:
 				return false;
 			}
-		}catch (Exception e) {
+		} catch (Exception e) {
 			return false;
 		}
 	}

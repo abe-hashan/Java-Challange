@@ -21,7 +21,7 @@ import challange.repository.UserRepository;
 import challange.service.OrganizationService;
 import challange.service.TicketService;
 import challange.service.UserService;
-import challange.viewModel.OrganizationModel;
+import challange.viewModel.OrganizationViewModel;
 import challange.viewModel.TicketViewModel;
 import challange.viewModel.UserViewModel;
 
@@ -90,8 +90,8 @@ public class ConsoleUtil {
 								ConsoleUtil.<TicketViewModel>printViewModels(tickets);
 								break;
 							case "3":
-								List<OrganizationModel> orgs=orgService.search(inputValue, inputField);
-								ConsoleUtil.<OrganizationModel>printViewModels(orgs);
+								List<OrganizationViewModel> orgs=orgService.search(inputValue, inputField);
+								ConsoleUtil.<OrganizationViewModel>printViewModels(orgs);
 								break;
 							default:
 								break;

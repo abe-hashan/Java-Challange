@@ -4,12 +4,12 @@ import org.apache.commons.lang3.StringUtils;
 
 import challange.domain.Organization;
 
-public class OrganizationModel{
+public class OrganizationViewModel{
 	private Organization organization;
 	private String	ticket_subject;
 	private String user_name;
 	
-	public OrganizationModel(Organization organization, String ticket_subject, String user_name) {
+	public OrganizationViewModel(Organization organization, String ticket_subject, String user_name) {
 		super();
 		this.organization = organization;
 		this.ticket_subject = ticket_subject;
