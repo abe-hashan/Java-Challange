@@ -45,8 +45,6 @@ public class SimpleTest {
 				&& users.get(0).getOrganization_name() != "");
 		assertTrue(!Objects.isNull(users.get(0).getSumitted_ticket_subject())
 				&& users.get(0).getSumitted_ticket_subject() != "");
-//		assertTrue(!Objects.isNull(users.get(0).getAssignee_ticket_subject())
-//				&& users.get(0).getAssignee_ticket_subject() != "");
 	}
 
 	@Test
